@@ -1,0 +1,12 @@
+[console_scripts]
+plainbox-trusted-launcher-1 = plainbox.impl.secure.launcher1:main
+plainbox = plainbox.public:main
+
+[plainbox.exporter]
+xml = plainbox.impl.exporter.xml:XMLSessionStateExporter
+xlsx = plainbox.impl.exporter.xlsx:XLSXSessionStateExporter [xlsx]
+rfc822 = plainbox.impl.exporter.rfc822:RFC822SessionStateExporter
+text = plainbox.impl.exporter.text:TextSessionStateExporter
+json = plainbox.impl.exporter.json:JSONSessionStateExporter
+html = plainbox.impl.exporter.html:HTMLSessionStateExporter
+

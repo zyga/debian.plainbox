@@ -1,0 +1,5 @@
+lxml >= 2.3
+requests >= 1.1
+
+[XLSX]
+XlsxWriter >= 0.3
