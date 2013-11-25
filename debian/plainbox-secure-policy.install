@@ -1,0 +1,1 @@
+contrib/policykit_auth_admin_keep/org.freedesktop.policykit.pkexec.policy usr/share/polkit-1/actions/

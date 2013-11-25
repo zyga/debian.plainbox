@@ -1,0 +1,9 @@
+This package was altered in comparison to the original upstream
+tarball. The plainbox.vendor python package was almost entirely
+removed and replaced with direct usage of unittest.mock and inspect
+modules from the python3.3 standard library.
+
+The upstream project ships those extra files to work on python3.2
+without additional dependencies but those copies are not necessary as
+Debian already carries the required software in the python3.3
+package.

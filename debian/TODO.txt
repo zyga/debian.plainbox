@@ -1,0 +1,2 @@
+1. Patch away plainbox.vendors, drop the associated licenses
+2. Re-enable testing (at build time and autopkgtests)

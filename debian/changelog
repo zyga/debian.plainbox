@@ -1,0 +1,58 @@
+plainbox (0.4~b1-1) ustable; urgency=low
+
+  [ Zygmunt Krynicki ]
+  * New upstream release
+  * debian/rules: Redo packaging using pybuild
+  * debian/rules: Fix python3-plainbox-doc package to actually contain documentation.
+  * debian/control: Change priority from extra to optional
+  * debian/control: Rewrite package description to better match the scope and
+    goal of the plainbox project.
+  * debian/control: Bump standards version to 3.9.5 without any changes
+  * debian/control: Add Debian Python Modules Team to Uploaders
+  * debian/control: Disable autopkgtests until unit tests are fixed to work
+    without checkbox being installed.
+  * debian/copyright: Bump date in to include 2013
+  * debian/watch: Update pattern to look at pypi and mangle beta versions
+  * debian/watch: escape unescapted dot in debian/watch
+  * debian/README.Debian: add a short readme that describes the alterations
+    performed as compared to the upstram tarball.
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Mon, 25 Nov 2013 15:51:03 +0100
+
+plainbox (0.2-4) quantal; urgency=low
+
+  * Rename debian/test to debian/tests, makes autopkgtests work again
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Wed, 05 Dec 2012 12:23:53 +0100
+
+plainbox (0.2-3) quantal; urgency=low
+
+  * Add dependency on python3-pkg-resources to plainbox
+  * Use python3 as plainbox interpreter (replacing python3.2)
+  * Don't build plainbox for multiple python3 versions
+  * Use autopkgtests to run unit tests
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Wed, 05 Dec 2012 12:05:55 +0100
+
+plainbox (0.2-2) quantal; urgency=low
+
+  * Split the package into plainbox and python3-plainbox
+  * Move the plainbox package to the utils section
+  * Update debian/copyright to refer to common-licenses
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Tue, 04 Dec 2012 14:26:49 +0100
+
+plainbox (0.2-1) quantal; urgency=low
+
+  * Remove useless whitespace
+  * Imported Upstream version 0.2
+  * Ship README.md as docs
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Tue, 04 Dec 2012 10:20:05 +0100
+
+plainbox (0.1-1) quantal; urgency=low
+
+  * Initial release
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Wed, 14 Nov 2012 19:36:19 +0000
+

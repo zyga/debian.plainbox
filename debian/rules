@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+export PYBUILD_NAME=plainbox
+
+%:
+	dh $@ --with=python3,sphinxdoc --buildsystem=pybuild
+
+# Apparently not covered by pybuild
+override_dh_installdocs:
+	python3 setup.py build_sphinx
+	dh_installdocs --link-doc=python3-plainbox-doc
+
+# Override dh_install to ensure that /usr/bin/plainbox is in the 
+# plainbox package and not in the python3-plainbox package.
+override_dh_install:
+	set -e; \
+		dh_install; \
+		mkdir -p debian/plainbox/usr/bin; \
+		mv debian/python3-plainbox/usr/bin/plainbox debian/plainbox/usr/bin/
+
+# Disable testing while the bug mentioned below is unfixed.
+override_dh_auto_test:
+	@echo 'testing is disabled (broken) in beta1'
+	@echo 'See https://bugs.launchpad.net/checkbox/+bug/1254189'
+
+get-orig-source:
+	uscan --noconf --force-download --download-current-version --destdir=. 

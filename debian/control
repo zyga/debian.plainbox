@@ -1,0 +1,170 @@
+Source: plainbox
+Section: utils
+Priority: optional
+Maintainer: Zygmunt Krynicki <zygmunt.krynicki@canonical.com>
+Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Build-Depends:
+ debhelper (>= 9),
+ dh-python,
+ python3-docutils,
+ python3-sphinx,
+ python3-all,
+ python3-lxml,
+ python3-pkg-resources,
+ python3-requests ( >= 1.1),
+ python3-setuptools,
+Standards-Version: 3.9.5
+X-Python3-Version: >= 3.2
+Homepage: http://launchpad.net/checkbox
+
+Package: plainbox
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-pkg-resources,
+ python3-plainbox (>= 0.4~b1)
+Description: Toolkit for software and hardware integration testing.
+ PlainBox is a toolkit consisting of python3 library, development tools,
+ documentation and examples. It is targeted at developers working on testing or
+ certification applications and authors creating tests for such applications.
+ .
+ PlainBox can be used to both create simple and comprehensive test tools as
+ well as to develop and execute test jobs and test scenarios. It was created as
+ a refined and rewritten core of the Checkbox project. It has a well tested and
+ documented core, small but active development community and a collection of
+ associated projects that use it as a lower-level engine/back-end library.
+ .
+ PlainBox has a novel approach to discovering (and probing) hardware and
+ software that is extensible and not hardwired into the system. It allows test
+ developers to express association between a particular test and the hardware,
+ software and configuration constraints that must be met for the test to
+ execute meaningfully. This feature, along with pluggable test definitions,
+ makes plainbox flexible and applicable to many diverse testing situations,
+ ranging from mobile phones, traditional desktop computers, servers and up to
+ testing "cloud" installations.
+ .
+ This package contains the plainbox executable
+
+Package: python3-plainbox
+Architecture: all
+Section: python
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ plainbox-policy,
+ python3-lxml,
+ python3-pkg-resources,
+ python3-requests (>= 1.1)
+Suggests:
+ python3-xlsxwriter
+Description: Toolkit for software and hardware integration testing.
+ PlainBox is a toolkit consisting of python3 library, development tools,
+ documentation and examples. It is targeted at developers working on testing or
+ certification applications and authors creating tests for such applications.
+ .
+ PlainBox can be used to both create simple and comprehensive test tools as
+ well as to develop and execute test jobs and test scenarios. It was created as
+ a refined and rewritten core of the Checkbox project. It has a well tested and
+ documented core, small but active development community and a collection of
+ associated projects that use it as a lower-level engine/back-end library.
+ .
+ PlainBox has a novel approach to discovering (and probing) hardware and
+ software that is extensible and not hardwired into the system. It allows test
+ developers to express association between a particular test and the hardware,
+ software and configuration constraints that must be met for the test to
+ execute meaningfully. This feature, along with pluggable test definitions,
+ makes plainbox flexible and applicable to many diverse testing situations,
+ ranging from mobile phones, traditional desktop computers, servers and up to
+ testing "cloud" installations.
+ .
+ This package contains the plainbox python3 library.
+
+Package: python3-plainbox-doc
+Architecture: all
+Section: doc
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends}
+Description: Toolkit for software and hardware integration testing.
+ PlainBox is a toolkit consisting of python3 library, development tools,
+ documentation and examples. It is targeted at developers working on testing or
+ certification applications and authors creating tests for such applications.
+ .
+ PlainBox can be used to both create simple and comprehensive test tools as
+ well as to develop and execute test jobs and test scenarios. It was created as
+ a refined and rewritten core of the Checkbox project. It has a well tested and
+ documented core, small but active development community and a collection of
+ associated projects that use it as a lower-level engine/back-end library.
+ .
+ PlainBox has a novel approach to discovering (and probing) hardware and
+ software that is extensible and not hardwired into the system. It allows test
+ developers to express association between a particular test and the hardware,
+ software and configuration constraints that must be met for the test to
+ execute meaningfully. This feature, along with pluggable test definitions,
+ makes plainbox flexible and applicable to many diverse testing situations,
+ ranging from mobile phones, traditional desktop computers, servers and up to
+ testing "cloud" installations.
+ .
+ This package contains the documentation for the plainbox python3 library
+
+Package: plainbox-secure-policy
+Architecture: all
+Depends: ${misc:Depends},
+Provides: plainbox-policy
+Description: Toolkit for software and hardware integration testing.
+ PlainBox is a toolkit consisting of python3 library, development tools,
+ documentation and examples. It is targeted at developers working on testing or
+ certification applications and authors creating tests for such applications.
+ .
+ PlainBox can be used to both create simple and comprehensive test tools as
+ well as to develop and execute test jobs and test scenarios. It was created as
+ a refined and rewritten core of the Checkbox project. It has a well tested and
+ documented core, small but active development community and a collection of
+ associated projects that use it as a lower-level engine/back-end library.
+ .
+ PlainBox has a novel approach to discovering (and probing) hardware and
+ software that is extensible and not hardwired into the system. It allows test
+ developers to express association between a particular test and the hardware,
+ software and configuration constraints that must be met for the test to
+ execute meaningfully. This feature, along with pluggable test definitions,
+ makes plainbox flexible and applicable to many diverse testing situations,
+ ranging from mobile phones, traditional desktop computers, servers and up to
+ testing "cloud" installations.
+ .
+ This package contains a PolicyKit .policy file that allows PlainBox to run
+ plainbox-trusted-launcher-1 as root and ask for the user password only once
+ per session.
+
+Package: plainbox-insecure-policy
+Architecture: all
+Depends: ${misc:Depends},
+Provides: plainbox-policy
+Conflicts: plainbox-policy
+Replaces: plainbox-policy
+Description: Toolkit for software and hardware integration testing.
+ PlainBox is a toolkit consisting of python3 library, development tools,
+ documentation and examples. It is targeted at developers working on testing or
+ certification applications and authors creating tests for such applications.
+ .
+ PlainBox can be used to both create simple and comprehensive test tools as
+ well as to develop and execute test jobs and test scenarios. It was created as
+ a refined and rewritten core of the Checkbox project. It has a well tested and
+ documented core, small but active development community and a collection of
+ associated projects that use it as a lower-level engine/back-end library.
+ .
+ PlainBox has a novel approach to discovering (and probing) hardware and
+ software that is extensible and not hardwired into the system. It allows test
+ developers to express association between a particular test and the hardware,
+ software and configuration constraints that must be met for the test to
+ execute meaningfully. This feature, along with pluggable test definitions,
+ makes plainbox flexible and applicable to many diverse testing situations,
+ ranging from mobile phones, traditional desktop computers, servers and up to
+ testing "cloud" installations.
+ .
+ Note that installing this package will allow *any* local user to execute any
+ of the plainbox jobs (test definitions), also installed on the same machine
+ (in system-wide locations), without any confirmation. You should only install
+ this package on machines where that is not a security problem. Typically this
+ package is installed on test machines inside automatically deployed test
+ farms.
