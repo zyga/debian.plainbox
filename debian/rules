@@ -4,10 +4,37 @@ export PYBUILD_NAME=plainbox
 %:
 	dh $@ --with=python3,sphinxdoc --buildsystem=pybuild
 
-# Apparently not covered by pybuild
-override_dh_installdocs:
-	python3 setup.py build_sphinx
-	dh_installdocs --link-doc=python3-plainbox-doc
+# Build sphinx html documentation. Generate manual pages for plainbox and
+# plainbox-trusted-launcher-1 using help2man
+override_dh_auto_build:
+	set -e; \
+		dh_auto_build --buildsystem=pybuild; \
+		python3 setup.py build_sphinx; \
+		help2man \
+			--name="swiss army knife development tool for functional test developers" \
+			--section=1 \
+			--source=Debian \
+			--no-discard-stderr \
+			--no-info \
+			--output plainbox.1 \
+			"python3 -m plainbox"; \
+		help2man \
+			--name="trusted launcher plainbox v1 job providers" \
+			--section=1 \
+			--source=Debian \
+			--no-discard-stderr \
+			--no-info \
+			--output plainbox-trusted-launcher-1.1 \
+			"python3 -m plainbox.impl.secure.launcher1";
+
+# Remove the generated man pages and any compiled python3 modules.
+# Remove the plainbox.vendor.funcsigs module (this works in tandem with the
+# 03-unvendorize patch)
+override_dh_clean:
+	rm -f plainbox.1 plainbox-trusted-launcher-1.1
+	find -name __pycache__ -print0 | xargs -0 rm -rf
+	rm -f plainbox/impl/vendor/funcsigs
+	dh_clean
 
 # Override dh_install to ensure that /usr/bin/plainbox is in the 
 # plainbox package and not in the python3-plainbox package.

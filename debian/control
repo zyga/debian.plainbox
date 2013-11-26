@@ -13,6 +13,7 @@ Build-Depends:
  python3-pkg-resources,
  python3-requests ( >= 1.1),
  python3-setuptools,
+ help2man,
 Standards-Version: 3.9.5
 X-Python3-Version: >= 3.2
 Homepage: http://launchpad.net/checkbox
@@ -24,7 +25,7 @@ Depends:
  ${python3:Depends},
  python3-pkg-resources,
  python3-plainbox (>= 0.4~b1)
-Description: Toolkit for software and hardware integration testing.
+Description: toolkit for software and hardware integration testing
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.
@@ -58,7 +59,7 @@ Depends:
  python3-requests (>= 1.1)
 Suggests:
  python3-xlsxwriter
-Description: Toolkit for software and hardware integration testing.
+Description: toolkit for software and hardware integration testing
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.
@@ -83,10 +84,11 @@ Description: Toolkit for software and hardware integration testing.
 Package: python3-plainbox-doc
 Architecture: all
 Section: doc
+Priority: extra
 Depends:
  ${misc:Depends},
  ${sphinxdoc:Depends}
-Description: Toolkit for software and hardware integration testing.
+Description: toolkit for software and hardware integration testing
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.
@@ -112,7 +114,7 @@ Package: plainbox-secure-policy
 Architecture: all
 Depends: ${misc:Depends},
 Provides: plainbox-policy
-Description: Toolkit for software and hardware integration testing.
+Description: toolkit for software and hardware integration testing
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.
@@ -142,7 +144,7 @@ Depends: ${misc:Depends},
 Provides: plainbox-policy
 Conflicts: plainbox-policy
 Replaces: plainbox-policy
-Description: Toolkit for software and hardware integration testing.
+Description: toolkit for software and hardware integration testing
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.

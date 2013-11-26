@@ -1,0 +1,45 @@
+Description: Add plainbox.__main__ to make `python3 -m plainbox` work
+ This patch adds a trivial plainbox.__main__ module so that the plainbox
+ python package can be executed directly with `python3 -m plainbox`.
+ This is useful to generate the plainbox.1 manual page with help2man
+
+Author: Zygmunt Krynicki <zygmunt.krynicki@canonical.com>
+Bug: https://bugs.launchpad.net/checkbox/+bug/1255066
+Last-Update: 2013-11-26
+Forwarded: yes
+--- /dev/null
++++ plainbox-0.4~b1/plainbox/__main__.py
+@@ -0,0 +1,33 @@
++# This file is part of Checkbox.
++#
++# Copyright 2013 Canonical Ltd.
++# Written by:
++#   Zygmunt Krynicki <zygmunt.krynicki@canonical.com>
++#
++# Checkbox is free software: you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation, either version 3 of the License, or
++# (at your option) any later version.
++#
++# Checkbox is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with Checkbox.  If not, see <http://www.gnu.org/licenses/>.
++
++"""
++:mod:`plainbox.__main__` -- execute plainbox 
++============================================
++
++This module allows plainbox to be executed with:
++
++    python3 -m plainbox
++"""
++
++from plainbox.public import main
++
++
++if __name__ == '__main__':
++    main()

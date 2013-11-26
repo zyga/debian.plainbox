@@ -1,4 +1,29 @@
-plainbox (0.4~b1-1) ustable; urgency=low
+plainbox (0.4~b1-2) unstable; urgency=low
+
+  [ Zygmut Krynicki ]
+
+  * debian/changelog: Correct s/ustable/unstable/
+  * debian/control: Set python3-plainbox-doc Priority to extra
+  * debian/control: Remove leading capitalization and trailing dot from the
+    description field.
+  * debian/control: Build-depend on help2man
+  * debian/patches: Add 01-add-main-module and 02-executable-laucher1 patches
+    so that `python3 -m plainbox` and `python3 -m
+    plainbox.impl.secure.launcher1` can be used to invoke plainbox and
+    plainbox-trusted-launcher-1
+  * debian/patches: Add 03-unvendorize so remove bundled copies of
+    python3-funcsigs and python3-mock that are not needed in Debian
+  * debian/rules: Remove plainbox/vendor/funcsigs directory on clean
+  * debian/rules: Generate plainbox.1 and plainbox-trusted-launcher-1 with
+    help2man at build time and remove them at clean time.
+  * debian/rules: Don't use dh_installdocs --link-doc to prevent every package
+    from depending on python3-plainbox-doc
+  * debian/plainbox.manpages, debian/python3-plainbox.manpages: Install the
+    generated manual pages
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Tue, 26 Nov 2013 13:08:28 +0100
+
+plainbox (0.4~b1-1) unstable; urgency=low
 
   [ Zygmunt Krynicki ]
   * New upstream release

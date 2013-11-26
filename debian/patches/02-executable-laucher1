@@ -1,0 +1,33 @@
+Description: Make plainbox.impl.secure.launcher1 executable via `python -m`
+ This patch adds a simple if __name__ == '__main__': main() statement
+ a the end of plainbox.impl.secure.launcher1 module so that it can be
+ executed directly with `python3 -m ...`. This is useful to generate
+ the plainbox-trusted-launcher-1.1 manual page with help2man
+
+Author: Zygmunt Krynicki <zygmunt.krynicki@canonical.com>
+Bug: https://bugs.launchpad.net/checkbox/+bug/1255085
+Last-Update: 2013-11-26
+Forwarded: yes
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- plainbox-0.4~b1.orig/plainbox/impl/secure/launcher1.py
++++ plainbox-0.4~b1/plainbox/impl/secure/launcher1.py
+@@ -173,3 +173,7 @@ def main(argv=None):
+             return launcher.run_shell_from_job(ns.hash, env)
+         except LookupError as exc:
+             raise SystemExit(str(exc))
++
++
++if __name__ == "__main__":
++    main()
