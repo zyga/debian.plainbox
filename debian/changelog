@@ -1,3 +1,12 @@
+plainbox (0.4~b1-3ubuntu1) UNRELEASED; urgency=low
+
+  * Build on top of package from Debian unstable
+  * debian/control: Demote standards version to 3.9.4
+  * debian/control: Move Debian maintainer to XSBC-Original-Maintainer
+    and add my @ubuntu.com personality as the new Maintainer
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Tue, 26 Nov 2013 02:51:33 +0100
+
 plainbox (0.4~b1-3) UNRELEASED; urgency=low
 
   * Initial release (Closes: #730568)
