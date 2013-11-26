@@ -54,12 +54,13 @@ Depends:
  ${misc:Depends},
  ${python3:Depends},
  plainbox-policy,
+ policykit-1,
  python3-lxml,
  python3-pkg-resources,
- python3-requests (>= 1.1)
+ python3-requests (>= 1.1),
 Suggests:
  python3-xlsxwriter
-Description: toolkit for software and hardware integration testing
+Description: toolkit for software and hardware testing (python3 module)
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.
@@ -88,7 +89,7 @@ Priority: extra
 Depends:
  ${misc:Depends},
  ${sphinxdoc:Depends}
-Description: toolkit for software and hardware integration testing
+Description: toolkit for software and hardware testing (documentation)
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.
@@ -114,7 +115,7 @@ Package: plainbox-secure-policy
 Architecture: all
 Depends: ${misc:Depends},
 Provides: plainbox-policy
-Description: toolkit for software and hardware integration testing
+Description: policykit policy required to use plainbox (secure version)
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.
@@ -144,7 +145,7 @@ Depends: ${misc:Depends},
 Provides: plainbox-policy
 Conflicts: plainbox-policy
 Replaces: plainbox-policy
-Description: toolkit for software and hardware integration testing
+Description: policykit policy required to use plainbox (insecure version)
  PlainBox is a toolkit consisting of python3 library, development tools,
  documentation and examples. It is targeted at developers working on testing or
  certification applications and authors creating tests for such applications.

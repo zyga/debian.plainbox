@@ -1,5 +1,2 @@
 # image files are very specific to the application, they don't belong in /usr/share
 python3-plainbox binary: image-file-in-usr-lib
-
-# PlainBox has to keep a copy of vendorized library licenses
-python3-plainbox binary: extra-license-file

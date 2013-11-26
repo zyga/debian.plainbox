@@ -7,6 +7,7 @@ Author: Zygmunt Krynicki <zygmunt.krynicki@canonical.com>
 Bug: https://bugs.launchpad.net/checkbox/+bug/1255066
 Last-Update: 2013-11-26
 Forwarded: yes
+
 --- /dev/null
 +++ plainbox-0.4~b1/plainbox/__main__.py
 @@ -0,0 +1,33 @@

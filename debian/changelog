@@ -1,3 +1,19 @@
+plainbox (0.4~b1-3) UNRELEASED; urgency=low
+
+  * Initial release (Closes: #730568)
+  * debian/control: Changed chort description of each package to be unique
+  * debian/control: Make python3-plainbox depend on policykit-1
+  * debian/patches: Fix patches to apply cleanly
+  * debian/copyright: Clarify license for most files as GPL-3+, drop text
+  * debian/copyright: Clairfy signal.py license as GPL-3 (only)
+  * debian/copyright: Add funcsigs license
+  * debian/copyright: Add mock license
+  * debian/copyright: Add extcmd license
+  * debian/python3-plainbox.lintian-overrides: Remove override for licenses
+    removed by the 03-unvendorize patch.
+
+ -- Zygmunt Krynicki <zygmunt.krynicki@canonical.com>  Wed, 27 Nov 2013 11:44:34 +0100
+
 plainbox (0.4~b1-2) unstable; urgency=low
 
   [ Zygmut Krynicki ]

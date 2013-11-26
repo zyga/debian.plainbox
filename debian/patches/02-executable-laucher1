@@ -8,18 +8,6 @@ Author: Zygmunt Krynicki <zygmunt.krynicki@canonical.com>
 Bug: https://bugs.launchpad.net/checkbox/+bug/1255085
 Last-Update: 2013-11-26
 Forwarded: yes
----
-The information above should follow the Patch Tagging Guidelines, please
-checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
-are templates for supplementary fields that you might want to add:
-
-Origin: <vendor|upstream|other>, <url of original patch>
-Bug: <url in upstream bugtracker>
-Bug-Debian: http://bugs.debian.org/<bugnumber>
-Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
-Forwarded: <no|not-needed|url proving that it has been forwarded>
-Reviewed-By: <name and email of someone who approved the patch>
-Last-Update: <YYYY-MM-DD>
 
 --- plainbox-0.4~b1.orig/plainbox/impl/secure/launcher1.py
 +++ plainbox-0.4~b1/plainbox/impl/secure/launcher1.py

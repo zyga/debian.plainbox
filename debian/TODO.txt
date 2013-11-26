@@ -1,2 +1,1 @@
-1. Patch away plainbox.vendors, drop the associated licenses
-2. Re-enable testing (at build time and autopkgtests)
+1. Re-enable testing (at build time and autopkgtests) when 0.4b2 is released
